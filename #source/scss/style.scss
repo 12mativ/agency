@@ -10,6 +10,10 @@ $border-color: #ececec;
 $contacts-bgcolor: #2d2d2d;
 $footer-color: #313030;
 
+html {
+	overflow-x: hidden;
+}
+
 body {
 	font-family:'Open Sans', sans-serif;
 	font-size: 16px;
@@ -27,7 +31,7 @@ header {
 	padding: 115px 10px 110px 10px;
 
 	&-footer {
-		padding: 40px 0;
+		padding: 40px 10px;
 	}
 
 	&-team {
@@ -344,6 +348,10 @@ nav {
 .members {
 	flex: 0 1 65%;
 
+	&__photos-adaptive {
+		display: none;
+	}
+
 	&__photos {
 		display: flex;
 		min-width: 0;
@@ -505,6 +513,21 @@ nav {
 	    width: 30%;
 	    height: 480px;
 
+	    &-adaptive {
+	    	display: none;
+	    	width: 100%;
+	    	background-color: $contacts-bgcolor;
+	    	text-align: center;
+
+	    	h5 {
+	    		margin-top: 30px;
+	    	}
+
+	    	.contacts__info:last-child {
+	    		margin-bottom: 30px;
+	    	}
+	    }
+
 	    .right-content__inner {
 	    	margin-left: 80px;
 	    }
@@ -533,7 +556,7 @@ nav {
 		text-transform: uppercase;
 		letter-spacing: 0.025em;
 		color: $btn-text-color;
-		margin-bottom: 41px;
+		margin: 30px 0 41px 0;
 	}
 
 	&__info {
@@ -595,6 +618,15 @@ footer {
 	.container {
 		max-width: 1200px;
 		width: 100%;
+		padding: 80px 10px 70px 10px;
+
+		&--header {
+			padding: 29px 10px 110px 10px;
+		}
+
+		&-footer {
+			padding: 35px 10px;
+		}
 	}
 
 	.header__video {
@@ -692,6 +724,13 @@ footer {
 		}
 	}
 
+	.tab-item {
+		display: block;
+		margin-bottom: 20px;
+	}
+
+
+
 	.lower-img {
 		flex-wrap: wrap;
 
@@ -725,6 +764,300 @@ footer {
 			width: 45%;
 			img {
 				display: inline-block;
+			}
+		}
+	}
+
+	// ======================TEAM=========================
+	.team {
+		.upper-content {
+			margin: 0 auto;
+			text-align: center;
+			width: 50%;
+		}
+
+		.text::after {
+			margin: 33px auto 70px auto;
+		}
+	}
+
+	.members {
+		margin-left: 20px;
+		&__photos {
+			display: none;
+		}
+
+		&__photos-adaptive {
+			display: block;
+			text-align: center;
+			margin-top: 30px;
+			div {
+				display: inline-block;
+				margin: 0 10px 0 0;
+
+			}
+
+			span {
+				display: inline-block;
+				position: relative;
+				margin-right: 10px;
+			}
+
+			& :last-child {
+				margin-right: 0;	 
+			}
+
+			span::after {
+				content: "sokina jue";
+				width: 100%;
+				display: block;
+				position: absolute;
+				bottom: 0;
+				height: 37px;
+				padding: 3%;
+				background-color: $black-bgcolor;
+				text-align: center;
+				color: $btn-text-color;			
+				text-transform: uppercase;
+				opacity: 0;
+				transition: all .1s linear;
+			}
+
+			span:hover::after {
+				opacity: 0.5;
+			}
+		}
+	}
+
+	// ======================E-MAIL=========================
+	.email {
+		&__header {
+			font-size: 30px;
+		}
+	}
+
+	.contacts {
+		&__upper-content{
+			margin: 0 auto;
+			text-align: center;
+			.text::after {
+				margin: 33px auto 70px auto;
+			}
+		}
+
+		&__right-content {
+			display: none;
+
+			&-adaptive {
+				display: block;
+				margin-top: 45px;
+			}
+		}
+
+		&__lower-content {
+			flex-wrap: wrap;
+			justify-content: center;
+
+		}
+	}
+}
+
+@media (max-width: "850px") {
+	// ====================TEAM======================
+	.members__photos-adaptive {
+		div {
+			width: 100%;
+			margin-bottom: 10px;	
+		}
+		
+	}
+}
+
+@media (max-width: "575px") {
+	.container {
+		padding: 70px 10px 60px 10px;
+
+		&--header {
+			padding: 29px 10px 80px 10px;
+		}
+
+		&-footer {
+			padding: 30px 10px 30px 10px;
+		}
+	}
+
+	// =====================HEADER========================
+	.header {
+		&__title {
+			font-size: 45px;
+			margin: 60px 0 20px 0;
+		}
+
+		&__video {
+			width: 90%;
+			height: 300px;
+		}
+	}
+
+	// ====================FEATURES======================
+	.features {
+		&__title {
+			font-size: 35px;
+		}
+	}
+
+	// ====================FEATURES PRODUCTS======================
+	.feature-products {
+		&__header {
+			font-size: 35px;
+		}
+	}
+
+	// ====================TEAM======================
+	.team {
+		.header {
+			font-size: 35px;
+		}
+
+		.lower-content {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.big-photo {
+			img {
+				margin: 0 auto;
+			}
+		}
+
+		.members {
+			&__name {
+				margin-top: 30px;
+			}
+		}
+	}
+
+	// ===================E-MAIL======================
+	.email {
+		&__input {
+			display: block;
+			margin: 0 auto 30px auto;
+			width: 70%;
+		}
+
+		&__btn {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+
+	// ========================CONTACTS====================
+	.contacts {
+		.name-mail {
+			flex-direction: column;
+		}
+
+		&__input:first-child {
+			margin: 0 0 20px 0;
+		}
+	}
+}
+
+@media (max-width: "430px") {
+	.container {
+		padding: 50px 10px 40px 10px;
+	}
+	//======================BUTTON=========================
+	.btn {
+		line-height: 25px;
+	}
+
+	// ======================HEADER======================
+	.header {
+		&__title {
+			font-size: 35px;
+			line-height: 55px;
+		}
+
+		&__video {
+			height: 235px;
+		}
+	}
+
+	// =======================FEATURES====================
+	.features {
+		.features__title {
+			font-size: 31px;
+			line-height: 45px;
+		}
+
+		&__right-content {
+			text-align: center;
+		}
+	}
+
+	.upper-row {
+		flex-direction: column;
+		.feature-item {
+			margin: 30px auto 0 auto;
+			img {
+				margin: 0 auto;
+			}
+		}
+	}
+
+	.lower-row {
+		flex-direction: column;
+		margin-top: 0;
+		.feature-item {
+			margin: 30px auto 0 auto;
+			img {
+				margin: 0 auto;
+			}
+		}
+	}
+
+	// =====================FEATURE PRODUCTS=====================
+	.feature-products {
+		&__header {
+			font-size: 31px;
+		}
+
+		&__text::after {
+			margin: 30px auto 60px auto;
+		}
+
+		&__tabs {
+			.tab-item {
+				font-size: 20px;
+			}
+		}
+
+		&__img {
+			.upper-img {
+				flex-direction: column;
+
+				div:nth-child(1) {
+					margin-right: 0;
+				}
+
+				div:nth-child(3) {
+					margin: 0 0 20px 0;
+				}
+
+			}
+
+			.lower-img {
+				flex-direction: column;
+
+				div:nth-child(1) {
+					margin-right: 0;
+				}
+
+				div:nth-child(3) {
+					margin: 0 0 20px 0;
+				}
+
 			}
 		}
 	}
