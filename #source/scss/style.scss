@@ -871,6 +871,19 @@ footer {
 		}
 		
 	}
+
+	// ======================TEAM=====================
+	.team {
+		.members {
+			&__links {
+				a {
+					display: block;
+					text-align: center;
+					margin: 0 0 10px 0;
+				}
+			}
+		}
+	}
 }
 
 @media (max-width: "575px") {
@@ -919,14 +932,24 @@ footer {
 			font-size: 35px;
 		}
 
+		.upper-content {
+			width: 80%;
+		} 
+
 		.lower-content {
 			flex-direction: column;
 			text-align: center;
+
+			.members {
+				margin-left: 0;
+			}
 		}
 
 		.big-photo {
 			img {
 				margin: 0 auto;
+				width: 55%;
+				height: 430px;
 			}
 		}
 
@@ -959,6 +982,25 @@ footer {
 
 		&__input:first-child {
 			margin: 0 0 20px 0;
+		}
+
+
+		&__left-content {
+			flex: 0 1 80%;
+		}
+	}
+
+	// ===================FOOTER==========================
+	.footer {
+		flex-direction: column;
+
+		.copyright {
+			order: 2;
+			text-align: center;
+		}
+
+		.links {
+			margin-bottom: 15px;
 		}
 	}
 }
@@ -1037,6 +1079,10 @@ footer {
 			.upper-img {
 				flex-direction: column;
 
+				div {
+					width: 60%;
+				}
+
 				div:nth-child(1) {
 					margin-right: 0;
 				}
@@ -1050,6 +1096,10 @@ footer {
 			.lower-img {
 				flex-direction: column;
 
+				div {
+					width: 60%;
+				}
+
 				div:nth-child(1) {
 					margin-right: 0;
 				}
@@ -1060,5 +1110,74 @@ footer {
 
 			}
 		}
+	}
+
+	// =====================TEAM==================
+	.team {
+		.upper-content {
+			width: 80%;
+		}
+
+		.lower-content {
+			.big-photo {
+				img {
+					width: 60%;
+					height: 350px;
+				}
+			}
+		}
+
+		.members {
+			&__links {
+				margin-bottom: 40px;
+			}
+
+			&__photos-adaptive {
+				div {
+					margin: 0;
+				}
+
+				span {
+					margin: 0 0 20px 0;
+				}
+			}
+		}
+	}
+
+	// =====================CONTACTS====================
+	.contacts {
+		&__upper-content {
+			width: 80%;
+		}
+	}
+}
+
+@media (max-width: "340px") {
+	// =====================HEADER====================
+	.header {
+		&__title {
+			font-size: 33px;
+		}
+
+		&__video {
+			height: 200px;
+		}
+	}
+
+	// ======================TEAM================
+	.team {
+		.lower-content {
+			.big-photo {
+				img {
+					width: 80%;
+					height: 290px;
+				}
+			}
+		}
+	}
+
+	// =====================FOOTER====================
+	.container-footer {
+		padding: 25px 10px 15px 10px;	
 	}
 }
