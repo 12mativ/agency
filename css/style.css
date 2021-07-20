@@ -599,6 +599,8 @@ footer {
   display: flex; }
   .links__item {
     margin-right: 20px; }
+    .links__item img {
+      height: 35px; }
   .links__item:last-child {
     margin-right: 0; }
 
